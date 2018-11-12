@@ -1,4 +1,4 @@
-package com.lpcheng.microskynet.Enum;
+package com.lpcheng.microskynet.exception;
 
 /**
  * 异常枚举类型

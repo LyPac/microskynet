@@ -1,7 +1,7 @@
 package com.lpcheng.microskynet.domain;
 
 import com.google.gson.annotations.Expose;
-import com.lpcheng.microskynet.Enum.ExceptionEnum;
+import com.lpcheng.microskynet.exception.ExceptionEnum;
 
 import java.util.HashMap;
 import java.util.Map;
