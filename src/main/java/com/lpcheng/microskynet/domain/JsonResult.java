@@ -1,15 +1,19 @@
 package com.lpcheng.microskynet.domain;
 
 import com.google.gson.annotations.Expose;
-import com.lpcheng.microskynet.exception.ExceptionEnum;
+import lombok.Data;
+import lombok.ToString;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * 全局返回的数据格式
  */
-public class JsonResult extends BasicEntity {
+@Data
+@ToString
+public class JsonResult implements Serializable {
 
     private ExceptionEnum exceptionEnum;
 

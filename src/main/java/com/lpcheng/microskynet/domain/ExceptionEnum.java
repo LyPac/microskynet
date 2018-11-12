@@ -1,4 +1,4 @@
-package com.lpcheng.microskynet.exception;
+package com.lpcheng.microskynet.domain;
 
 /**
  * 异常枚举类型

@@ -20,12 +20,12 @@ public class TestController {
     private Gson gson;
 
     @RequestMapping("test")
-    public String test() {
+    public JsonResult test() {
         Map<String, Object> map = new HashMap();
         map.put("username", "admin");
         map.put("password", "admin");
         map.put("registertime", new Date());
         log.debug("{}", gson);
-        return JsonResult.success(map).toString();
+        return JsonResult.success(map);
     }
 }
