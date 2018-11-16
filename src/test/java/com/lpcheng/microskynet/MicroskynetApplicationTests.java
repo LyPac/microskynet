@@ -11,6 +11,7 @@ public class MicroskynetApplicationTests {
 
     @Test
     public void contextLoads() {
+
     }
 
 }
