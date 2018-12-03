@@ -4,13 +4,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.hadoop.hbase.Cell;
 import org.apache.hadoop.hbase.CellUtil;
 import org.apache.hadoop.hbase.client.Delete;
-import org.apache.hadoop.hbase.client.HTableInterface;
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.hadoop.hbase.HbaseTemplate;
-import org.springframework.data.hadoop.hbase.TableCallback;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -95,9 +93,9 @@ public class HBaseUtil {
         });
     }
 
-    public boolean delete(String tableName, String rowKey){
+    public boolean delete(String tableName, String rowKey) {
         return hbaseTemplate.execute(tableName, hTableInterface -> {
-            Delete delete=new Delete(Bytes.toBytes(rowKey));
+            Delete delete = new Delete(Bytes.toBytes(rowKey));
             hTableInterface.delete(delete);
             hTableInterface.close();
             return true;

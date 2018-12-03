@@ -1,6 +1,5 @@
 package com.lpcheng.microskynet.service;
 
-import com.lpcheng.microskynet.controller.CameraController;
 import com.lpcheng.microskynet.dao.CameraDao;
 import com.lpcheng.microskynet.domain.Camera;
 import com.lpcheng.microskynet.domain.JsonResult;
@@ -17,7 +16,7 @@ public class CameraService {
     @Autowired
     private CameraDao cameraDao;
 
-    public JsonResult list(){
+    public JsonResult list() {
         List<Camera> list = cameraDao.list();
         Map map = new HashMap();
         map.put("cameraList", list);

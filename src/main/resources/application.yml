@@ -1,4 +1,4 @@
-#配置Tomcat
+#配置端口
 server:
   port: 8080
 
@@ -22,14 +22,31 @@ spring:
     throw-exception-if-no-handler-found: true
   resources:
     add-mappings: false
+  #hdfs地址
   hadoop:
-    fsUri: hdfs://dev-120.wtw.com:9000
+    fsUri: hdfs://dev.microskynet.com:9000
+  #hbase配置zookeeper地址
   hbase:
     config:
-      hbase.zookeeper.quorum: dev-120.wtw.com
+      hbase.zookeeper.quorum: dev.microskynet.com
       hbase.zookeeper.property.clientPort: 2181
-
-#配置日志
+  #kafka配置
+  kafka:
+    bootstrap-servers: dev.microskynet.com:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: all
+      batch-size: 16384
+      buffer-memory: 33554432
+      retries: 0
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: microskynet
+      enable-auto-commit: true
+      auto-commit-interval: 1000ms
+#日志
 logging:
   level:
     root: info

@@ -8,9 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
-import java.util.Map;
-
-import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -23,18 +20,18 @@ public class HBaseUtilTest {
 
     @Test
     public void get() {
-        List list = hBaseUtil.find("camera",null, null);
+        List list = hBaseUtil.find("camera", null, null);
         System.out.println(gson.toJson(list));
     }
 
     @Test
-    public void save(){
+    public void save() {
         hBaseUtil.save("camera", "192.168.88.102", "info", "lng", "111.324006");
         hBaseUtil.save("camera", "192.168.88.102", "info", "lat", "23.502532");
     }
 
     @Test
-    public void delete(){
+    public void delete() {
         hBaseUtil.delete("camera", "192.168.88.102");
     }
 }
