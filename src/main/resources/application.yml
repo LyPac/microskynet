@@ -1,6 +1,6 @@
 #配置Tomcat
 server:
-  port: 80
+  port: 8080
 
 spring:
   #配置gson
@@ -22,6 +22,12 @@ spring:
     throw-exception-if-no-handler-found: true
   resources:
     add-mappings: false
+  hadoop:
+    fsUri: hdfs://dev-120.wtw.com:9000
+  hbase:
+    config:
+      hbase.zookeeper.quorum: dev-120.wtw.com
+      hbase.zookeeper.property.clientPort: 2181
 
 #配置日志
 logging:
@@ -30,10 +36,3 @@ logging:
     com.lpcheng.microskynet: debug
   pattern:
     dateformat: yyyy-MM-dd HH:mm:ss
-
-hbase:
-  config:
-    hbase.zookeeper.quorum: dev-120.wtw.com
-    hbase.zookeeper.property.clientPort: 2181
-    fs.defaultFS: hdfs://dev-120.wtw.com:8020
-    fs.trash.interval: 1
