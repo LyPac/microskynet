@@ -49,7 +49,7 @@ spring:
 #日志
 logging:
   level:
-    root: info
+    root: trace
     com.lpcheng.microskynet: debug
   pattern:
     dateformat: yyyy-MM-dd HH:mm:ss
