@@ -17,4 +17,23 @@ public class HDFSUtilTest {
     public void list() {
         hdfsUtil.lsr("/");
     }
+
+    @Test
+    public void isDirectory() {
+        boolean flag = hdfsUtil.isDirectory("/microskynet/orginal/192.168.1.64");
+        System.out.println(flag);
+    }
+
+    @Test
+    public void mkdir() {
+        String dir = "/microskynet/orginal/192.168.1.64";
+        if (!hdfsUtil.isDirectory(dir)) {
+            hdfsUtil.mkdir(dir);
+        }
+    }
+
+    @Test
+    public void get() {
+        hdfsUtil.get("/microskynet/orginal/192.168.1.65/1544144297256.avi", "D:/out/192.168.1.65/1544144297256.avi");
+    }
 }

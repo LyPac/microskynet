@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/camera")
 public class CameraController {
 
-
     @Autowired
     private CameraService cameraService;
 

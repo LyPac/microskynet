@@ -1,12 +1,12 @@
 package com.lpcheng.microskynet.domain;
 
 import com.google.gson.annotations.Expose;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 
 @Data
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode
 public class Camera {
     @Expose

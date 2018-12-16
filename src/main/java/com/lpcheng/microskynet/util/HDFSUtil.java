@@ -13,14 +13,26 @@ public class HDFSUtil {
     private FsShell fsShell;
 
     public void lsr(String path) {
-        fsShell.lsr(path).forEach(fileStatus -> System.out.println(fileStatus.getPath()));
+        fsShell.lsr(path).forEach(fileStatus -> log.info(fileStatus.getPath().toString()));
     }
 
     public void put(String src, String dst) {
         fsShell.put(src, dst);
     }
 
+    public void get(String src, String dst) {
+        fsShell.get(src, dst);
+    }
+
     public void rmr(String path) {
         fsShell.rmr(path);
+    }
+
+    public boolean isDirectory(String dir) {
+        return fsShell.test(true, false, true, dir);
+    }
+
+    public void mkdir(String dir) {
+        fsShell.mkdir(dir);
     }
 }

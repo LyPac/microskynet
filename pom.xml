@@ -26,6 +26,9 @@
         <spark.version>2.3.2</spark.version>
         <hadoop.version>2.6.0-cdh5.15.1</hadoop.version>
         <hbase.version>1.2.0-cdh5.15.1</hbase.version>
+        <javacv.version>1.4.3</javacv.version>
+        <opencv.version>3.4.3-1.4.3</opencv.version>
+        <ffmpeg.version>4.0.2-1.4.3</ffmpeg.version>
     </properties>
 
     <repositories>
@@ -155,7 +158,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+        <!-- okhttp -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>3.11.0</version>
+        </dependency>
     </dependencies>
 
     <build>
